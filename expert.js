@@ -1,19 +1,21 @@
-const Matching = require ('/matching')
+const Matching = require ('./matching')
 
 class Expert{
     constructor(name, jobDescription){
     this.name = name
-    this.bookings = []
     this.jobDescription = jobDescription
+    this.matchings = []
     }
 
 
-  match(client, jobDescription) 
+  match(client, jobDescription) {
     const matching = new Matching(client, this, jobDescription)
     
-    if (armagan.demand == hilmi.jobDescription) {
+    if (client.demand == this.jobDescription) {
     this.matchings.push(matching); 
-    console.log('${hilmi.name} has ${armagan.name.length} matching.')
+    console.log(`${this.name} and ${client.name} has matched`)
+    console.log(`${this.name} has ${this.matchings.length} matching.`)
+    console.log(`${client.name} has ${this.matchings.length} matching.`)
     
     }
   }
