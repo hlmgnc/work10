@@ -1,15 +1,13 @@
-const db = require ('./database')
-const Expert = require ('./expert')
-const Client = require ('./client')
-const Matching = require ('./matching')
 
+const { clientDatabase, expertDatabase } = require('./database')
+const printMatchingHistory = require('./lib/print-matching-history')
 
-const hilmi = new Expert('Hilmi','cook')
-const armagan = new Client('Armagan','Berlin','cook')
+const hilmi = expertDatabase.findBy('name','Hilmi')
+const armagan = clientDatabase.findByName('Armagan')
 
-hilmi.match(armagan, 'cook')
+armagan.match(hilmi, 'Frankfurt','Frankfurt')
+clientDatabase.update(armagan)
 
-db.save('clients', [armagan] )
-db.save('experts', [hilmi] )
+printMatchingHistory(armagan)
 
-const client = db.load('clients')
+console.log(clientDatabase.findBy('location', 'Frankfurt'))

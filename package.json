@@ -10,6 +10,8 @@
   "author": "hilmi genc <hlmgnc@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "flatted": "^2.0.1",
+    "uuid": "^7.0.2"
   }
 }
